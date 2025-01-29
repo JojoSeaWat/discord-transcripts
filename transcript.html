@@ -1,0 +1,47 @@
+async function createTranscriptHTML(channelId, messages) {
+    const filename = `transcript-${channelId}.html`;
+    const filePath = path.join(GIT_REPO_PATH, filename);
+
+    console.log(`Creating transcript file: ${filePath}`);
+
+    const messageData = messages.map(msg => ({
+        author: msg.author.tag,
+        timestamp: msg.createdAt.toLocaleString(),
+        content: msg.content
+    }));
+
+    const htmlContent = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        ${messageData.map(msg => `
+            <div class="message ${msg.author.includes('Bot') ? 'bot' : ''}">
+                <span class="author">${msg.author}</span>
+                <span class="timestamp">${msg.timestamp}</span>
+                <p>${msg.content.replace(/@(\w+)/g, '<span class="mention">@$1</span>')}</p>
+            </div>
+        `).join('')}
+    </div>
+</body>
+</html>
+    `;
+
+    fs.writeFileSync(filePath, htmlContent);
+
+    console.log(`Pushing transcript file to GitHub`);
+
+    await pushToGitHub(filename);
+
+    const transcriptUrl = `https://jojosawat.github.io/discord-transcripts/${filename}`;
+    console.log(`Transcript URL: ${transcriptUrl}`);
+
+    console.log(`Transcript created: ${filePath}`);
+    return transcriptUrl;
+}

@@ -1,0 +1,31 @@
+body {
+    background-color: #36393f;
+    color: #dcddde;
+    font-family: 'Whitney', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #2f3136;
+    border-radius: 8px;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #40444b;
+}
+
+.message:last-child {
+    border-bottom: none;
+[_{{{CITATION{{{_1{](https://github.com/jemsbhai/hacktxteamzero/tree/551308a55e070c51d6b763e1c8e7b04fc7cdcdc0/frontend%2Fsrc%2Fscreens%2FDonorHome%2FDonorHome.js)[_{{{CITATION{{{_2{](https://github.com/Ramneek99/Registration-System/tree/3a695758c4775526dcebea3b4445edee8c98df3a/public%2Fhtml%2FAdminAccessTranscript.php)
