@@ -17,6 +17,7 @@ body {
     width: 80%;
     max-width: 800px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Prevents content overflow */
 }
 
 .message {
@@ -28,4 +29,50 @@ body {
 
 .message:last-child {
     border-bottom: none;
-[_{{{CITATION{{{_1{](https://github.com/jemsbhai/hacktxteamzero/tree/551308a55e070c51d6b763e1c8e7b04fc7cdcdc0/frontend%2Fsrc%2Fscreens%2FDonorHome%2FDonorHome.js)[_{{{CITATION{{{_2{](https://github.com/Ramneek99/Registration-System/tree/3a695758c4775526dcebea3b4445edee8c98df3a/public%2Fhtml%2FAdminAccessTranscript.php)
+}
+
+.author {
+    font-weight: bold;
+    color: #7289da;
+    margin-right: 10px;
+    font-size: 1em; /* Adjust font size for better readability */
+}
+
+.timestamp {
+    font-size: 0.75em; /* Smaller timestamp */
+    color: #72767d;
+    margin-left: auto;
+}
+
+.message-content {
+    flex: 1;
+    margin: 5px 0 0 0;
+    word-wrap: break-word; /* Ensures long words break to the next line */
+}
+
+.avatar {
+    width: 40px; /* Adjusted avatar size */
+    height: 40px;
+    border-radius: 50%; /* Makes avatars round */
+    margin-right: 10px;
+}
+
+.mention {
+    color: #7289da;
+    background-color: #4f545c;
+    padding: 0 3px;
+    border-radius: 3px;
+}
+
+.bot {
+    color: #7289da;
+}
+
+a {
+    color: #7289da;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
