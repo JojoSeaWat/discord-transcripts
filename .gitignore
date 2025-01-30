@@ -1,0 +1,5 @@
+New-Item -Path . -Name ".gitignore" -ItemType "file" -Value "
+discord-transcripts/
+node_modules/
+.env
+"
